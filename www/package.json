@@ -34,6 +34,7 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "wasm-game-of-life": "file:../pkg"
+    "wasm-game-of-life": "file:../pkg",
+    "minimist": ">=1.2.2"
   }
 }
