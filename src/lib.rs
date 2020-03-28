@@ -44,6 +44,9 @@ impl fmt::Display for Universe {
 #[wasm_bindgen]
 impl Universe {
     pub fn new() -> Universe {
+        // For better debugging :)
+        utils::set_panic_hook();
+
         let width = 128;
         let height = 128;
 
