@@ -1,3 +1,5 @@
-# WASM Game of Life
+# WASM Game of Life - [Live Here](https://wasm-game-of-life.netlify.com)
 
-The game of life, built with WASM and Rust :)
+The game of life implemented using web assembly.
+
+### TODO :)
