@@ -141,6 +141,34 @@ impl Universe {
         self.cells = next;
     }
 
+    pub fn clear(&mut self) {
+        for row in 0..self.height {
+            for col in 0..self.width {
+                let idx = self.get_index(row, col);
+                self.cells[idx] = Cell::Dead
+            }
+        }        
+    }
+
+    pub fn reset(&mut self) {
+        let cells = (0..self.width * self.height)
+            .map(|_i| {
+                // if i % 2 == 0 || i % 7 == 0 {
+                //     Cell::Alive
+                // } else {
+                //     Cell::Dead
+                // }
+                if js_sys::Math::random() < 0.5 {
+                    Cell::Alive
+                } else {
+                    Cell::Dead
+                }
+            })
+            .collect();
+
+        self.cells = cells;
+    }
+
     fn get_index(&self, row: u32, column: u32) -> usize {
         (row * self.width + column) as usize
     }

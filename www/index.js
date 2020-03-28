@@ -8,7 +8,7 @@ const DEAD_COLOR = "#FFFFFF";
 const ALIVE_COLOR = "#000000";
 
 // Constuct the universe, and get its width and height.
-const universe = Universe.new();
+var universe = Universe.new();
 const width = universe.width();
 const height = universe.height();
 
@@ -28,6 +28,8 @@ const isPaused = () => {
 };
 
 const playPauseButton = document.getElementById("play-pause");
+const stopButton = document.getElementById("stop-button");
+const restartButton = document.getElementById("restart-button");
 
 const play = () => {
   playPauseButton.textContent = "⏸";
@@ -39,6 +41,27 @@ const pause = () => {
   cancelAnimationFrame(animationId);
   animationId = null;
 };
+
+const stop = () => {
+  universe.clear().then(() => {
+    cancelAnimationFrame(animationId);
+    animationId = null;
+  });
+};
+
+const restart = () => {
+  pause();
+  universe.reset();
+  play();
+};
+
+restartButton.addEventListener("click", () => {
+  restart();
+});
+
+stopButton.addEventListener("click", () => {
+  stop();
+});
 
 playPauseButton.addEventListener("click", () => {
   if (isPaused()) {

@@ -166,6 +166,16 @@ export class Universe {
         wasm.universe_tick(this.ptr);
     }
     /**
+    */
+    clear() {
+        wasm.universe_clear(this.ptr);
+    }
+    /**
+    */
+    reset() {
+        wasm.universe_reset(this.ptr);
+    }
+    /**
     * @returns {number}
     */
     width() {

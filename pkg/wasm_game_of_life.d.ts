@@ -25,6 +25,12 @@ export class Universe {
 */
   tick(): void;
 /**
+*/
+  clear(): void;
+/**
+*/
+  reset(): void;
+/**
 * @returns {number} 
 */
   width(): number;
