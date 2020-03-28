@@ -1,5 +1,7 @@
 mod utils;
 
+extern crate js_sys;
+
 use std::fmt;
 use wasm_bindgen::prelude::*;
 
@@ -46,8 +48,13 @@ impl Universe {
         let height = 128;
 
         let cells = (0..width * height)
-            .map(|i| {
-                if i % 2 == 0 || i % 7 == 0 {
+            .map(|_i| {
+                // if i % 2 == 0 || i % 7 == 0 {
+                //     Cell::Alive
+                // } else {
+                //     Cell::Dead
+                // }
+                if js_sys::Math::random() < 0.5 {
                     Cell::Alive
                 } else {
                     Cell::Dead
