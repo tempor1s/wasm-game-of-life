@@ -30,6 +30,8 @@ const isPaused = () => {
 const playPauseButton = document.getElementById("play-pause");
 const stopButton = document.getElementById("stop-button");
 const restartButton = document.getElementById("restart-button");
+const ticksSlider = document.getElementById("ticks-per-frame");
+var tickMilliseconds = ticksSlider.valueAsNumber;
 
 const play = () => {
   playPauseButton.textContent = "⏸";
@@ -54,6 +56,10 @@ const restart = () => {
   universe.reset();
   play();
 };
+
+ticksSlider.addEventListener("change", (event) => {
+  tickMilliseconds = event.srcElement.valueAsNumber;
+});
 
 restartButton.addEventListener("click", () => {
   restart();
@@ -89,13 +95,19 @@ canvas.addEventListener("click", (event) => {
   drawCells();
 });
 
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 const renderLoop = () => {
-  universe.tick();
+  sleep(tickMilliseconds).then(() => {
+    universe.tick();
 
-  drawGrid();
-  drawCells();
+    drawGrid();
+    drawCells();
 
-  animationId = requestAnimationFrame(renderLoop);
+    animationId = requestAnimationFrame(renderLoop);
+  });
 };
 
 const drawGrid = () => {
