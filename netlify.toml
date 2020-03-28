@@ -11,6 +11,7 @@
 # “publish” is the directory to publish (relative to the root of your repo).
 
 [build]
+  command = "wasm-pack build"
   base    = "www"
   publish = "www/dist"
   command = "npm run build"
