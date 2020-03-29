@@ -69,11 +69,6 @@ impl Universe {
 
         let cells = (0..width * height)
             .map(|_i| {
-                // if i % 2 == 0 || i % 7 == 0 {
-                //     Cell::Alive
-                // } else {
-                //     Cell::Dead
-                // }
                 if js_sys::Math::random() < 0.5 {
                     Cell::Alive
                 } else {
@@ -153,15 +148,10 @@ impl Universe {
     pub fn reset(&mut self) {
         let cells = (0..self.width * self.height)
             .map(|_i| {
-                // if i % 2 == 0 || i % 7 == 0 {
-                //     Cell::Alive
-                // } else {
-                //     Cell::Dead
-                // }
                 if js_sys::Math::random() < 0.5 {
-                    Cell::Alive
-                } else {
                     Cell::Dead
+                } else {
+                    Cell::Alive
                 }
             })
             .collect();
