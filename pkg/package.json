@@ -1,5 +1,5 @@
 {
-  "name": "wasm-game-of-life",
+  "name": "wasm-game-of-life-temporis",
   "collaborators": [
     "Ben <benlaugherty@gmail.com>"
   ],
@@ -11,11 +11,11 @@
     "url": "https://github.com/tempor1s/wasm-game-of-life"
   },
   "files": [
-    "wasm_game_of_life_bg.wasm",
-    "wasm_game_of_life.js",
-    "wasm_game_of_life.d.ts"
+    "wasm_game_of_life_temporis_bg.wasm",
+    "wasm_game_of_life_temporis.js",
+    "wasm_game_of_life_temporis.d.ts"
   ],
-  "module": "wasm_game_of_life.js",
-  "types": "wasm_game_of_life.d.ts",
+  "module": "wasm_game_of_life_temporis.js",
+  "types": "wasm_game_of_life_temporis.d.ts",
   "sideEffects": false
 }

@@ -112,7 +112,7 @@ impl Universe {
     }
 
     pub fn tick(&mut self) {
-        let _timer = Timer::new("Universe::tick");
+        // let _timer = Timer::new("Universe::tick");
 
         let mut next = self.cells.clone();
 
