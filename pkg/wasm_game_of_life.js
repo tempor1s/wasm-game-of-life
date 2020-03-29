@@ -241,6 +241,14 @@ export const __wbindgen_object_drop_ref = function(arg0) {
     takeObject(arg0);
 };
 
+export const __wbg_time_246498b6a24402b6 = function(arg0, arg1) {
+    console.time(getStringFromWasm0(arg0, arg1));
+};
+
+export const __wbg_timeEnd_dc6f656e450c9027 = function(arg0, arg1) {
+    console.timeEnd(getStringFromWasm0(arg0, arg1));
+};
+
 export const __wbg_random_d45f566bef640e60 = typeof Math.random == 'function' ? Math.random : notDefined('Math.random');
 
 export const __wbindgen_throw = function(arg0, arg1) {

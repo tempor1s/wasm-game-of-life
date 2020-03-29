@@ -3,7 +3,13 @@
   "collaborators": [
     "Ben <benlaugherty@gmail.com>"
   ],
+  "description": "Conways game of life built using WASM!",
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tempor1s/wasm-game-of-life"
+  },
   "files": [
     "wasm_game_of_life_bg.wasm",
     "wasm_game_of_life.js",

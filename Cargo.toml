@@ -1,7 +1,10 @@
 [package]
 name = "wasm-game-of-life"
+description = "Conways game of life built using WASM!"
 version = "0.1.0"
+repository = "https://github.com/tempor1s/wasm-game-of-life"
 authors = ["Ben <benlaugherty@gmail.com>"]
+license = "MIT"
 edition = "2018"
 
 [lib]
